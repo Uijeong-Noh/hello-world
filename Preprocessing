@@ -31,6 +31,444 @@
         "colab": {}
       },
       "source": [
+        "from nltk.stem import WordNetLemmatizer"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Ysrf1jzrwhV0",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "n = WordNetLemmatizer()"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "m2YzzXfGwpoK",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "words = ['policy', 'doing', 'organization', 'have', 'going', 'love', 'lives', 'fly', 'dies', 'watched', 'has', 'starting']"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "OAgUibLFwv1R",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        },
+        "outputId": "41598ca8-baa1-4708-f4b7-3ed04ccfb01f"
+      },
+      "source": [
+        "print([n.lemmatize(w) for w in words])"
+      ],
+      "execution_count": 12,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "['policy', 'doing', 'organization', 'have', 'going', 'love', 'life', 'fly', 'dy', 'watched', 'ha', 'starting']\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "bZBa72Q0w5mK",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 71
+        },
+        "outputId": "dabf7044-1fec-4c0f-b37c-dff067c538e4"
+      },
+      "source": [
+        "import nltk\n",
+        "nltk.download('wordnet')"
+      ],
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "[nltk_data] Downloading package wordnet to /root/nltk_data...\n",
+            "[nltk_data]   Unzipping corpora/wordnet.zip.\n"
+          ],
+          "name": "stdout"
+        },
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "True"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 11
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "k2c_zNE5xUij",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        },
+        "outputId": "9d7300d4-3394-4fa1-b96c-a902c7c3137b"
+      },
+      "source": [
+        "n.lemmatize('dies', 'v')"
+      ],
+      "execution_count": 13,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'die'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 13
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "vwImc-ahxlIh",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        },
+        "outputId": "c25232e6-becc-4ab1-bc20-c5996cd4e7fd"
+      },
+      "source": [
+        "n.lemmatize('watched', 'v')"
+      ],
+      "execution_count": 14,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'watch'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 14
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "E4ndE7j_xpEN",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        },
+        "outputId": "61c4a7df-0659-487a-c224-adb5f8de26d9"
+      },
+      "source": [
+        "n.lemmatize('has', 'v')"
+      ],
+      "execution_count": 15,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'have'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 15
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "gOoovRmXxskK",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "from nltk.stem import PorterStemmer"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "eU194yXux-BT",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "from nltk.tokenize import word_tokenize"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "qnt5k6hxyBzq",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "s = PorterStemmer()"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "85or2Ji0yFgj",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "text = \"This was not the map we found in Billy Bones's chest, but an accurate copy, complete in all things--names and heights and soundings--with the single exception of the red crosses and the written notes.\""
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "_uWl2iF1yIfi",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "words = word_tokenize(text)"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "BLX1PKXHyL9j",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 71
+        },
+        "outputId": "23eba38f-8448-46db-bb7c-f9670bfc91ab"
+      },
+      "source": [
+        "import nltk\n",
+        "nltk.download('punkt')"
+      ],
+      "execution_count": 21,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "[nltk_data] Downloading package punkt to /root/nltk_data...\n",
+            "[nltk_data]   Unzipping tokenizers/punkt.zip.\n"
+          ],
+          "name": "stdout"
+        },
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "True"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 21
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "23S2KDdMyRLy",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 55
+        },
+        "outputId": "210e3ed8-f6fa-4d93-dfd7-4ad8c0135706"
+      },
+      "source": [
+        "print(words)"
+      ],
+      "execution_count": 23,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "['This', 'was', 'not', 'the', 'map', 'we', 'found', 'in', 'Billy', 'Bones', \"'s\", 'chest', ',', 'but', 'an', 'accurate', 'copy', ',', 'complete', 'in', 'all', 'things', '--', 'names', 'and', 'heights', 'and', 'soundings', '--', 'with', 'the', 'single', 'exception', 'of', 'the', 'red', 'crosses', 'and', 'the', 'written', 'notes', '.']\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "L_vNIk-YyaMU",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 55
+        },
+        "outputId": "72b669c1-7766-4aaa-a57f-79e1e5ffcd0a"
+      },
+      "source": [
+        "print([s.stem(w) for w in words])"
+      ],
+      "execution_count": 24,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "['thi', 'wa', 'not', 'the', 'map', 'we', 'found', 'in', 'billi', 'bone', \"'s\", 'chest', ',', 'but', 'an', 'accur', 'copi', ',', 'complet', 'in', 'all', 'thing', '--', 'name', 'and', 'height', 'and', 'sound', '--', 'with', 'the', 'singl', 'except', 'of', 'the', 'red', 'cross', 'and', 'the', 'written', 'note', '.']\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "iUTPwkI0yn6K",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "from nltk.stem import PorterStemmer"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "RlYUugaC1fkd",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "s = PorterStemmer()"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "J9jWubP51hx5",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "words = ['policy', 'doing', 'organization', 'have', 'going', 'love', 'lives', 'fly', 'dies', 'watched', 'has', 'starting']"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "KptMJoHA1k9S",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        },
+        "outputId": "0d1fb2f6-8b71-4085-daa1-7393cc03b8de"
+      },
+      "source": [
+        "print([s.stem(w) for w in words])"
+      ],
+      "execution_count": 29,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "['polici', 'do', 'organ', 'have', 'go', 'love', 'live', 'fli', 'die', 'watch', 'ha', 'start']\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "R6fx0jQm1zcz",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        },
+        "outputId": "9c56600a-7969-425f-be9e-d92748bc5bac"
+      },
+      "source": [
+        "from nltk.stem import LancasterStemmer\n",
+        "l = LancasterStemmer()\n",
+        "print([l.stem(w) for w in words])"
+      ],
+      "execution_count": 31,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "['policy', 'doing', 'org', 'hav', 'going', 'lov', 'liv', 'fly', 'die', 'watch', 'has', 'start']\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Bkz3ic7C2JHe",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
         ""
       ],
       "execution_count": 0,
